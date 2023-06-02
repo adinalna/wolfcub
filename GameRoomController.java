@@ -24,13 +24,15 @@ import javafx.util.Duration;
 
 public class GameRoomController {
 
-    // the main content VBox
+    private Player currentPlayer;
+    private GameRoom gameRoom;
+    private List<Player> players;
     private int clickedButtonCount = 0; // counter to keep track of clicked buttons
     private boolean gameEnded = false; // flag to track whether the game has ended
     //private static final int GAME_DURATION = 10; // Duration in seconds
 
-    private int wolf = 2;
-    private int villager = 3;
+    private int wolf = 2; //TEMP
+    private int villager = 3; //TEMP
 
     @FXML
     private Label timerLabel;
@@ -49,27 +51,32 @@ public class GameRoomController {
     private int timeRemaining;
 
     @FXML
+    public void initialize(Stage stage, GameRoom gameRoom) {
+        this.gameRoom = gameRoom;
+        this.players = gameRoom.getPlayers();
+        // Pre-game (Wait for players)
+        narrator.appendText("\nGame will Start in 10..");
+        startTimer();
+    }
+
+    @FXML
     private void sendMessage() {
         String message = messageField.getText();
         chatArea.appendText("You: " + message + "\n");
         messageField.clear();
     }
 
-    @FXML
-    public void initialize(Stage stage, List<Player> players) {
-
-        // Pre-game (Wait for players)
-        narrator.appendText("\nGame will Start in 10..");
-        if(GamePlaymaker.checkAllPlayersInGame(players)){
-
-        }
-        startTimer();
+    public void setCurrentPlayer(Player player) {
+        this.currentPlayer = player;
     }
 
     public void setStage(Stage stage) {
     }
-    private void pregame() {
+
+    private void preGameController() {
         narrator.appendText("\nNarrator: \nGame is ready\n");
+        gameRoom.preGame();
+        currentPlayer = players.get(0);
 
         // Delay the display of the alert using Platform.runLater()
         Platform.runLater(() -> {
@@ -77,15 +84,34 @@ public class GameRoomController {
             alert.setTitle("Game Information");
             alert.setHeaderText("All players are ready.");
             alert.setContentText("The game will start now!");
+            gameRoom.preGame();
             alert.showAndWait().ifPresent(buttonType -> {
                 if (buttonType == ButtonType.OK) {
                     // OK button was pressed, call your method here
-
-                    roleReveal();
+                    roleReveal(currentPlayer);
                 }
             });
         });
 
+    }
+
+    private void roleReveal(Player player) {
+        Role role = player.getRole();
+        String description = "You're a Werewolf\nKill all the villagers!";
+
+        // Delay the display of the alert using Platform.runLater()
+        Platform.runLater(() -> {
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Role Information");
+            alert.setHeaderText(role.getRoleName());
+            alert.setContentText(description);
+            alert.showAndWait().ifPresent(buttonType -> {
+                if (buttonType == ButtonType.OK) {
+                    // OK button was pressed, call your method here
+                    nightTime();
+                }
+            });
+        });
     }
 
     private void startTimer() {
@@ -110,8 +136,7 @@ public class GameRoomController {
 
     private void endRound() {
         narrator.setText("");
-        pregame();
-
+        preGameController();
     }
 
     private String formatTime(int seconds) {
@@ -154,26 +179,6 @@ public class GameRoomController {
         );
         timeline.setCycleCount(30);
         timeline.play();
-    }
-
-
-    private void roleReveal() {
-        String role = "Werewolf";
-        String description = "You're a Werewolf\nKill all the villagers!";
-
-        // Delay the display of the alert using Platform.runLater()
-        Platform.runLater(() -> {
-            Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setTitle("Role Information");
-            alert.setHeaderText(role);
-            alert.setContentText(description);
-            alert.showAndWait().ifPresent(buttonType -> {
-                if (buttonType == ButtonType.OK) {
-                    // OK button was pressed, call your method here
-                    nightTime();
-                }
-            });
-        });
     }
 
     private void nightTime() {

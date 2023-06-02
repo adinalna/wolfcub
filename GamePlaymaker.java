@@ -18,11 +18,11 @@ public class GamePlaymaker {
         return gameIdBuilder.toString();
     }
 
-    public static void createRoom(Player host) {
-        GameRoom gameRoom = new GameRoom(host, true);
-        gameRoom.addPlayer(host);
+    public static GameRoom createGameRoom(List<Player> players, boolean gameSettings) {
+        GameRoom gameRoom = new GameRoom(players, gameSettings);
         //DATABASE: add room
         gameRoomList.add(gameRoom); //TEMP
+        return gameRoom;
     }
 
     public static void removeGame(GameRoom gameRoom) {
@@ -45,4 +45,6 @@ public class GamePlaymaker {
         }
         return false;
     }
+
+
 }
