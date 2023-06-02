@@ -5,12 +5,12 @@
 package warewolfculb;
 
 import javafx.application.Platform;
-import java.io.IOException;
+
+import java.util.List;
 import java.util.Optional;
-import javafx.animation.Animation;
+
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -19,18 +19,12 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
-/**
- * FXML Controller class
- *
- * @author HP
- */
-public class PrimaryController {
+public class GameRoomController {
 
-    @FXML
-    private VBox mainContent; // the main content VBox
+    // the main content VBox
     private int clickedButtonCount = 0; // counter to keep track of clicked buttons
     private boolean gameEnded = false; // flag to track whether the game has ended
     //private static final int GAME_DURATION = 10; // Duration in seconds
@@ -62,15 +56,18 @@ public class PrimaryController {
     }
 
     @FXML
-    public void initialize() {
+    public void initialize(Stage stage, List<Player> players) {
 
         // Pre-game (Wait for players)
-        narrator.appendText("\nWaiting for all players");
+        narrator.appendText("\nGame will Start in 10..");
+        if(GamePlaymaker.checkAllPlayersInGame(players)){
+
+        }
         startTimer();
-
-
     }
 
+    public void setStage(Stage stage) {
+    }
     private void pregame() {
         narrator.appendText("\nNarrator: \nGame is ready\n");
 
@@ -83,6 +80,7 @@ public class PrimaryController {
             alert.showAndWait().ifPresent(buttonType -> {
                 if (buttonType == ButtonType.OK) {
                     // OK button was pressed, call your method here
+
                     roleReveal();
                 }
             });

@@ -9,6 +9,7 @@ public class Player {
 
     private String playerID;
     private String name;
+    private boolean inGame;
     private Role role;
     private boolean eliminated;
     private boolean protecteD;
@@ -21,6 +22,7 @@ public class Player {
         this.name = name;
         this.eliminated = false;
         this.protecteD = false;
+        this.inGame = false;
         this.votes = new ArrayList<>();
 
     }
@@ -63,6 +65,16 @@ public class Player {
 //    }
 
     // Allow players to vote for a specific player to eliminate
+
+
+    public void setInGame(boolean inGame) {
+        this.inGame = inGame;
+    }
+
+    public boolean isInGame() {
+        return inGame;
+    }
+
     public void vote(Player player) {
 
         this.votes.add(player);

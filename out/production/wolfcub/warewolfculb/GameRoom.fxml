@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="warewolfculb.PrimaryController">
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="warewolfculb.GameRoomController">
     <top>
         <VBox alignment="CENTER">
             <Label style="-fx-font-size: 24px;" text="Game Room" />

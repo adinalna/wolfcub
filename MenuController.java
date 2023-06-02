@@ -23,7 +23,7 @@ import javafx.stage.Stage;
  *
  * @author Farisah
  */
-public class LobbyInterfaceController {     // implements Initializable
+public class MenuController {     // implements Initializable
 
     private Lobby lobby; // Reference to the Lobby class
     private Player player;
@@ -67,43 +67,9 @@ public class LobbyInterfaceController {     // implements Initializable
 
     @FXML
     private void joinRoomButtonClicked(ActionEvent event) {
-        lobby = new Lobby();
-        String userId = player.getPlayerID();
-        boolean success = lobby.joinPublicRoom(userId);
-        if (success) {
-            // Close the current stage
-            Stage stage = (Stage) joinRoomButton.getScene().getWindow();
-            stage.close();
-
-            try {
-//                FXMLLoader loader = new FXMLLoader(getClass().getResource("testing.fxml"));
-//                Parent testingRoot = loader.load();
-//                TestingController testingController = loader.getController();
-//
-//                // Add the testing view to the StackPane
-//                mainStackPane.getChildren().add(testingRoot);
-//
-//                // Hide the lobby view
-//                joinRoomButton.getScene().getRoot().setVisible(false);
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("testing.fxml"));
-                Parent root = loader.load();
-                PrimaryController primaryController = loader.getController();
-
-                Stage testingStage = new Stage();
-                testingStage.setScene(new Scene(root));
-                testingStage.setTitle("Testing");
-                testingStage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            showJoinRoomErrorAlert("Failed to join public room. Maximum number of players reached.");
-        }
-        //can get the user id from the database
-//        String userId = player.getPlayerID();
-//        lobby.joinPublicRoom(userId);
-//        System.out.println("Joined public room. User ID: " + userId);
+        switchToLobby();
     }
+
 
     private void showJoinRoomErrorAlert(String errorMessage) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -117,7 +83,7 @@ public class LobbyInterfaceController {     // implements Initializable
     private void createRoomButtonClicked(ActionEvent event) {
         //can get the user id from the database
         String userId = player.getPlayerID();
-        String roomCode = lobby.createPrivateRoom(userId);
+        String roomCode = lobby.createRoom(userId);
         if (roomCode != null) {
             System.out.println("Created private room. User ID: " + userId + ", Room Code: " + roomCode);
             showRoomCodeAlert(roomCode);
@@ -161,5 +127,21 @@ public class LobbyInterfaceController {     // implements Initializable
 //    public void initialize(URL url, ResourceBundle rb) {
 //        // TODO
 //    }
+
+    private void switchToLobby() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Lobby.fxml"));
+            Parent root = loader.load();
+            LobbyController lobbyController = loader.getController();
+
+            Stage stage = (Stage) joinRoomButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Lobby");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showJoinRoomErrorAlert("Failed to load Lobby.fxml");
+        }
+    }
 
 }

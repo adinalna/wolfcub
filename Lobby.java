@@ -66,7 +66,7 @@ public class Lobby{
     
     //if user create private room
     //private room would be automatically destroyed if more than 5 min waiting time
-    public static String createPrivateRoom(String userId) {
+    public static String createRoom(String userId) {
         privateRoomsLock.lock();
         try {
             if (privateRooms.size() >= MAX_PRIVATE_ROOMS) {
