@@ -9,6 +9,7 @@ package warewolfculb;
  * @author HP
  */
 import javafx.application.Application;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,8 +22,6 @@ import java.util.List;
 
 public class GameManager extends Application {
     private static final String GAME_MENU_FXML = "game-menu.fxml";
-    private static final String LOBBY_FXML = "lobby.fxml";
-    private static final String LOBBY_LIST_FXML = "lobby-list.fxml";
     private static final String GAME_ROOM_FXML = "game-room.fxml";
     private static final String GAME_ROOM_TITLE = "Game Room";
 
@@ -52,32 +51,14 @@ public class GameManager extends Application {
         List<Lobby> availableLobbies = new ArrayList<>();
 
         // Example code to add dummy lobbies
-        availableLobbies.add(new Lobby());
-        availableLobbies.add(new Lobby());
-        availableLobbies.add(new Lobby());
+        availableLobbies.add(new Lobby("TEST1"));
+        availableLobbies.add(new Lobby("TEST2"));
+        availableLobbies.add(new Lobby("TEST3"));
 
-        return (ObservableList<Lobby>) availableLobbies;
+        return FXCollections.observableArrayList(availableLobbies);
     }
 
     public LobbyListController getLobbyListController() {
         return lobbyListController;
-    }
-
-    public void showLobbyList() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(LOBBY_LIST_FXML));
-            Parent root = loader.load();
-
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Lobby List");
-            stage.show();
-
-            lobbyListController = loader.getController();
-            lobbyListController.setGameManager(this);
-            lobbyListController.initialize();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

@@ -99,7 +99,7 @@ public class LobbyController {
 
             GameRoomController gameRoomController = loader.getController();
             //create game
-            gameRoomController.initialize(stage, GamePlaymaker.createGameRoom(players, true));
+//            gameRoomController.initialize(stage, GamePlaymaker.createGameRoom("TEST",players, true));
 
             Player currentPlayer = players.get(0); // Assuming the current player is at index 0
             currentPlayer.setInGame(true);

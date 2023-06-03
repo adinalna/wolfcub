@@ -7,7 +7,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.HBox?>
 
-<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="warewolfculb.GameMenuController" spacing="10" alignment="CENTER">
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="warewolfculb.LobbyListController" spacing="10" alignment="CENTER">
     <padding>
         <Insets top="50" right="50" bottom="50" left="50"/>
     </padding>
@@ -16,6 +16,6 @@
 
     <HBox spacing="10">
         <TextField fx:id="gameCodeField" promptText="Enter Game Code" />
-        <Button text="Join" onAction="#joinGameButtonClicked" />
+        <Button text="Join" onAction="#joinButtonClicked" />
     </HBox>
 </VBox>

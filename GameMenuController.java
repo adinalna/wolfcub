@@ -5,6 +5,9 @@
 package warewolfculb;
 
 import java.io.IOException;
+import java.util.List;
+
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -50,13 +53,13 @@ public class GameMenuController {     // implements Initializable
     private Button rulesButton;
 
     public void initialize() {
-        lobby = new Lobby(); // Instantiate the Lobby class
-        int userId = lobby.generateUserId();
-        sessionId = generateSessionId(userId); // Generate session ID for the player
-        player = new Player(String.valueOf(userId), "Player" + userId);
-//        USERNAME.setText("Welcome Player!");
-//        USERNAME.setText("Welcome Player " + player.getPlayerID());
-        System.out.println("Welcome! Your User ID: " + userId + ", Session ID: " + sessionId);
+//        lobby = new Lobby(""); // Instantiate the Lobby class
+////        int userId = lobby.generateUserId();
+//        sessionId = generateSessionId(userId); // Generate session ID for the player
+//        player = new Player(String.valueOf(userId), "Player" + userId);
+////        USERNAME.setText("Welcome Player!");
+////        USERNAME.setText("Welcome Player " + player.getPlayerID());
+//        System.out.println("Welcome! Your User ID: " + userId + ", Session ID: " + sessionId);
         String paragraph = """
                 Steps:
                 1. Once 7 players have entered the game room, the room will be start.
@@ -85,7 +88,21 @@ public class GameMenuController {     // implements Initializable
 
     @FXML
     private void joinGameButtonClicked(ActionEvent event) {
-        gameManager.showLobbyList();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("lobby-list.fxml"));
+            Parent root = loader.load();
+
+            LobbyListController lobbyListController = loader.getController();
+            lobbyListController.setLobbyList((ObservableList<Lobby>) gameManager.getAvailableLobbies());
+
+            Stage stage = (Stage) joinGameButton.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Lobby List");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
