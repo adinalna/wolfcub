@@ -119,7 +119,7 @@ public class Player {
 
     // PlayerID getter 
     public String getPlayerID() {
-        return playerID;
+        return "001";
     }
 
     public void setRole(Role role) {

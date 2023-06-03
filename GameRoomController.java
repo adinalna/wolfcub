@@ -108,7 +108,7 @@ public class GameRoomController {
             alert.showAndWait().ifPresent(buttonType -> {
                 if (buttonType == ButtonType.OK) {
                     // OK button was pressed, call your method here
-                    nightTime();
+                    nightPhaseController();
                 }
             });
         });
@@ -181,7 +181,7 @@ public class GameRoomController {
         timeline.play();
     }
 
-    private void nightTime() {
+    private void nightPhaseController() {
         String action = "Kill";
         String actionDesc = "Choose who you want to kill!";
 

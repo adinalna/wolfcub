@@ -24,6 +24,9 @@ public class Lobby{
     private static final Lock publicRoomsLock = new ReentrantLock();
     private static final Lock privateRoomsLock = new ReentrantLock();
 
+    public Lobby() {
+    }
+
     //to generate user ID
     public static int generateUserId() {
         synchronized (Lobby.class) {
