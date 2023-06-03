@@ -18,7 +18,7 @@ public class Lobby {
         return name;
     }
 
-    public void addUser(Player player) {
+    public void joinLobby(Player player) {
         players.add(player);
         System.out.println(player.getName() + " joined the lobby.");
 

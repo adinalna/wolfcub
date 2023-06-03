@@ -4,11 +4,17 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class LobbyListController {
     @FXML
@@ -40,8 +46,23 @@ public class LobbyListController {
             Lobby selectedLobby = lobbyListView.getSelectionModel().getSelectedItem();
             if (selectedLobby != null) {
                 // Handle joining the selected game lobby using the game code
-                System.out.println("GAME SELECTED");
-                // Add your code here
+                Player currentPlayer = new Player("001","John"); // Replace with the actual player object
+                selectedLobby.joinLobby(currentPlayer);
+
+                // Load the lobby.fxml view and set up the LobbyController
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("lobby.fxml"));
+                Parent root;
+                try {
+                    root = loader.load();
+                    LobbyController lobbyController = loader.getController();
+                    lobbyController.setLobby(selectedLobby);
+
+                    // Replace the current stage with the lobby view
+                    Stage currentStage = (Stage) lobbyListView.getScene().getWindow();
+                    currentStage.setScene(new Scene(root));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }

@@ -19,6 +19,8 @@ public class LobbyController {
     private int playerIdCounter = 1;
     private static final int MAX_PLAYERS = 7;
 
+    private Lobby currentLobby;
+
     @FXML
     private ListView<String> playerListView;
 
@@ -108,5 +110,9 @@ public class LobbyController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void setLobby(Lobby selectedLobby) {
+        this.currentLobby = selectedLobby;
     }
 }
