@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package wolfcub.main;
 
 import javafx.application.Application;
@@ -12,15 +8,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import wolfcub.resources.controllers.GameMenuController;
-import wolfcub.resources.controllers.LobbyListController;
 import java.util.ArrayList;
 import java.util.List;
 
 public class GameManager extends Application {
     private static final String GAME_ROOM_TITLE = "Game Room";
-
-    private LobbyListController lobbyListController;
-
     public static void main(String[] args) {
         launch(args);
     }
@@ -33,7 +25,7 @@ public class GameManager extends Application {
 
         Scene gameMenuScene = new Scene(gameMenuRoot);
         primaryStage.setScene(gameMenuScene);
-        primaryStage.setTitle("Game Menu");
+        primaryStage.setTitle(GAME_ROOM_TITLE);
         primaryStage.show();
 
         gameMenuController.setGameManager(this);
