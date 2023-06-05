@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="650.0" prefWidth="847.0" spacing="10" style="-fx-background-image: url('../images/menu_background.jpg'); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wolfcub.resources.controllers.GameMenuController">
+    <children>
+        <AnchorPane prefHeight="711.0" prefWidth="847.0" style="-fx-background-color: transparent;">
+            <children>
+                <HBox alignment="CENTER" spacing="10" />
+                 <Button fx:id="joinGameButton" layoutX="323.0" layoutY="217.0" onAction="#joinGameButtonClicked" prefHeight="43.0" prefWidth="199.0" style="-fx-background-color: rgb(145, 220, 235); -fx-text-fill: black;" text="Join Game">
+                     <font>
+                         <Font size="14.0" />
+                     </font>
+                 </Button>
+                 <Button layoutX="323.0" layoutY="276.0" onAction="#createGameButtonClicked" prefHeight="43.0" prefWidth="199.0" style="-fx-background-color: rgb(145, 220, 235); -fx-text-fill: black;" text="Create Game">
+                     <font>
+                         <Font size="14.0" />
+                     </font>
+                 </Button>
+                 <Button fx:id="rulesButton" layoutX="323.0" layoutY="399.0" onAction="#rulesButtonClicked" prefHeight="43.0" prefWidth="199.0" style="-fx-background-color: rgb(145, 220, 235); -fx-text-fill: black;" text="Rules">
+                     <font>
+                         <Font size="14.0" />
+                     </font>
+                 </Button>
+                 <Button layoutX="323.0" layoutY="337.0" onAction="#profileButtonClicked" prefHeight="43.0" prefWidth="199.0" style="-fx-background-color: rgb(145, 220, 235); -fx-text-fill: black;" text="Profile">
+                     <font>
+                         <Font size="14.0" />
+                     </font>
+                 </Button>
+                 <Button layoutX="323.0" layoutY="458.0" onAction="#exitButtonClicked" prefHeight="43.0" prefWidth="199.0" style="-fx-background-color: rgb(145, 220, 235); -fx-text-fill: black;" text="Exit">
+                     <font>
+                         <Font size="14.0" />
+                     </font>
+                 </Button>
+              <BorderPane layoutX="108.0" layoutY="66.0" opacity="0.91" prefHeight="95.0" prefWidth="630.0">
+                  <opaqueInsets>
+                      <Insets bottom="2.0" />
+                  </opaqueInsets>
+                  <center>
+                      <Label text="WOlfCUBS" BorderPane.alignment="CENTER">
+                          <font>
+                              <Font name="Comic Sans MS" size="53.0" />
+                          </font>
+                      </Label>
+                  </center>
+              </BorderPane>
+            </children>
+        </AnchorPane>
+        <HBox spacing="5" />
+    </children>
+</VBox>
