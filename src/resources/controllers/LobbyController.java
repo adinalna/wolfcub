@@ -8,15 +8,14 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Button;
-import wolfcub.main.FXMLFetcher;
-import wolfcub.main.GamePlaymaker;
-import wolfcub.main.Lobby;
-import wolfcub.main.Player;
+import wolfcub.main.*;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+
 public class LobbyController {
 
     private int playerIdCounter = 1;
@@ -78,20 +77,11 @@ public class LobbyController {
     }
 
     @FXML
-    private void setAllPlayersInGame() {//TEMPORARY
-        for (Player player : players) {
-            player.setInGame(true);
-        }
-    }
-    @FXML
     private void toGameRoomButtonHandler(ActionEvent event) {
-        setAllPlayersInGame();;//TEMPORARY
-        if(GamePlaymaker.checkAllPlayersInGame(players)){
-            switchToGameRoom();
-        }
+        switchToGameRoom(GameManager.createGameRoom("TEST", players));
     }
 
-    private void switchToGameRoom() {
+    private void switchToGameRoom(GameRoom gameRoom) {
         try {
             Stage stage = (Stage) playerListView.getScene().getWindow();
 
@@ -101,15 +91,15 @@ public class LobbyController {
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.setTitle("Game Room");
-
-            GameRoomController gameRoomController = loader.getController();
-            // Create game
-            // gameRoomController.initialize(stage, GamePlaymaker.createGameRoom("TEST", players, true));
+            System.out.println(gameRoom);
+            GameRoomController gameRoomController = new GameRoomController();
+            gameRoomController.setGameRoom(gameRoom);
 
             Player currentPlayer = players.get(0); // Assuming the current player is at index 0
-            currentPlayer.setInGame(true);
+            currentPlayer.setInGame("");
 
             stage.show();
+            GameManager.startGameRoom(gameRoom);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -23,7 +23,6 @@ public class GameMenuController {     // implements Initializable
     private Lobby lobby; // Reference to the Lobby class
     private Player player;
     private String sessionId; // Session ID for the current player
-
     private GameManager gameManager;
 
     @FXML

@@ -7,15 +7,19 @@ public class Lobby {
     private String name;
     private List<Player> players;
     private GameRoom gameRoom;
+    private GameManager gameManager;
 
     public Lobby(String name) {
         this.name = name;
         players = new ArrayList<>();
-        gameRoom = null;
     }
 
     public String getName() {
         return name;
+    }
+
+    public void setGameManager(GameManager gameManager) {
+        this.gameManager = gameManager;
     }
 
     public void joinLobby(Player player) {
@@ -23,13 +27,7 @@ public class Lobby {
         System.out.println(player.getName() + " joined the lobby.");
 
         if (players.size() == 7) {
-            createGameRoom();
+            GameManager.createGameRoom(name, players);
         }
-    }
-
-    private void createGameRoom() {
-        gameRoom = new GameRoom(name, players, true);
-        System.out.println("Game room created with 7 players.");
-        gameRoom.startGame();
     }
 }

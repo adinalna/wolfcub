@@ -15,12 +15,12 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import wolfcub.main.GameRoom;
-import wolfcub.main.Player;
-import wolfcub.main.Role;
+import wolfcub.main.*;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.TextArea;
 
 public class GameRoomController {
-
     private Player currentPlayer;
     private GameRoom gameRoom;
     private List<Player> players;
@@ -48,12 +48,14 @@ public class GameRoomController {
     private int timeRemaining;
 
     @FXML
-    public void initialize(Stage stage, GameRoom gameRoom) {
+    public void initialize() {
+        narrator.setText("");
+        narrator.appendText("\nGame will Start in 10..");
+    }
+
+    public void setGameRoom(GameRoom gameRoom) {
         this.gameRoom = gameRoom;
         this.players = gameRoom.getPlayers();
-        // Pre-game (Wait for players)
-        narrator.appendText("\nGame will Start in 10..");
-        startTimer();
     }
 
     @FXML
@@ -70,21 +72,17 @@ public class GameRoomController {
     public void setStage(Stage stage) {
     }
 
-    private void preGameController() {
-        narrator.appendText("\nNarrator: \nGame is ready\n");
-        gameRoom.preGame();
-        currentPlayer = players.get(0);
+    public void preGameController() {
+        currentPlayer = gameRoom.getCurrentPlayer();
 
-        // Delay the display of the alert using Platform.runLater()
         Platform.runLater(() -> {
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Game Information");
             alert.setHeaderText("All players are ready.");
             alert.setContentText("The game will start now!");
-            gameRoom.preGame();
             alert.showAndWait().ifPresent(buttonType -> {
                 if (buttonType == ButtonType.OK) {
-                    // OK button was pressed, call your method here
+                    gameRoom.assignPlayerRoles();
                     roleReveal(currentPlayer);
                 }
             });
@@ -94,7 +92,7 @@ public class GameRoomController {
 
     private void roleReveal(Player player) {
         Role role = player.getRole();
-        String description = "You're a Werewolf\nKill all the villagers!";
+        String description = TextRepository.getPreGameText(role.getRoleName());
 
         // Delay the display of the alert using Platform.runLater()
         Platform.runLater(() -> {
@@ -123,7 +121,7 @@ public class GameRoomController {
 
                     if (timeRemaining <= 0) {
                         timerLabel.setText("00:00");
-                        endRound();
+                        roleReveal(gameRoom.getCurrentPlayer());
                     }
                 })
         );
@@ -131,10 +129,6 @@ public class GameRoomController {
         timeline.play();
     }
 
-    private void endRound() {
-        narrator.setText("");
-        preGameController();
-    }
 
     private String formatTime(int seconds) {
         int minutes = seconds / 60;

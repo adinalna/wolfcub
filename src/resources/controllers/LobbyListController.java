@@ -51,7 +51,7 @@ public class LobbyListController {
             Lobby selectedLobby = lobbyListView.getSelectionModel().getSelectedItem();
             if (selectedLobby != null) {
                 // Handle joining the selected game lobby using the game code
-                Player currentPlayer = new Player("001","John"); // Replace with the actual player object
+                Player currentPlayer = new Player("007","John"); // Replace with the actual player object
                 selectedLobby.joinLobby(currentPlayer);
 
                 // Load the lobby.fxml view and set up the LobbyController
