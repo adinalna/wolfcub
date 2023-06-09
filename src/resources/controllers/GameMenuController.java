@@ -1,6 +1,7 @@
 package wolfcub.resources.controllers;
 
 import java.io.IOException;
+
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -8,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
@@ -39,7 +41,8 @@ public class GameMenuController {     // implements Initializable
     private StackPane mainStackPane;
     @FXML
     private Button joinGameButton;
-
+    @FXML
+    private Label nameLabel;
     @FXML
     private Button rulesButton;
 
@@ -131,6 +134,19 @@ public class GameMenuController {     // implements Initializable
     private String generateSessionId(int userId) {
         // Generate session ID based on user ID or any other logic you prefer
         return "SESSION_" + userId;
+    }
+
+//    public void setPlayerNames(List<String> playerNames) {
+//        if (!playerNames.isEmpty()) {
+//            String firstName = playerNames.get(0);
+//            // Do something with the first name (e.g., display it)
+//            nameLabel.setText("Welcome: " + firstName);
+//        }
+//    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+        nameLabel.setText("Welcome, " + player.getName() + "!");
     }
 }
 //
