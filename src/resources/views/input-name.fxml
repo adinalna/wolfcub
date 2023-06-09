@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="650.0" prefWidth="847.0" spacing="10" style="-fx-background-image: url('../images/menu_background.jpg'); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wolfcub.resources.controllers.InputName">
+   <children>
+      <AnchorPane prefHeight="651.0" prefWidth="847.0">
+         <children>
+            <Label layoutX="287.0" layoutY="62.0" text="Enter Username">
+               <font>
+                  <Font name="Comic Sans MS" size="36.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nameField" layoutX="286.0" layoutY="161.0" prefHeight="43.0" prefWidth="273.0" style="-fx-alignment: center;"/>
+            <Button layoutX="380.0" layoutY="231.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="88.0" style="-fx-background-color: rgb(145, 220, 235);" fx:id="addButton" text="Enter!" onAction="#addButtonClicked">
+               <font>
+                  <Font name="Comic Sans MS" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

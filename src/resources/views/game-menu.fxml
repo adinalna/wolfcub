@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="650.0" prefWidth="847.0" spacing="10" style="-fx-background-image: url('../images/menu_background.jpg'); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wolfcub.resources.controllers.GameMenuController">
+<VBox prefHeight="650.0" prefWidth="847.0" spacing="10" style="-fx-background-image: url('../images/menu_background.jpg'); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wolfcub.resources.controllers.GameMenuController">
     <children>
         <AnchorPane prefHeight="711.0" prefWidth="847.0" style="-fx-background-color: transparent;">
             <children>
@@ -51,6 +51,15 @@
                       </Label>
                   </center>
               </BorderPane>
+                <BorderPane layoutX="108.0" layoutY="130.0" opacity="0.91" prefHeight="95.0" prefWidth="630.0">
+                    <center>
+                        <Label fx:id="nameLabel" BorderPane.alignment="CENTER">
+                            <font>
+                                <Font name="Comic Sans MS" size="24.0" />
+                            </font>
+                        </Label>
+                    </center>
+                </BorderPane>
             </children>
         </AnchorPane>
         <HBox spacing="5" />
