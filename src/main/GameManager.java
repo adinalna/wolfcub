@@ -35,6 +35,7 @@ public class GameManager extends Application {
             Parent root = loader.load();
             GameMenuController controller = loader.getController();
             controller.setPlayer(player);
+            controller.setGameManager(this);
 
             Scene gameMenuScene = new Scene(root);
             Stage gameMenuStage = new Stage();
