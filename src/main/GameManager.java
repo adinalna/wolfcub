@@ -62,9 +62,8 @@ public class GameManager extends Application {
     }
 
     public static GameRoom createGameRoom(String name, List<Player> players) {
-        GameRoom newGameRoom = new GameRoom(name, players, gameRoomController);;
+        GameRoom newGameRoom = new GameRoom(name, players, gameRoomController);
         gameRooms.add(newGameRoom);
-        System.out.println(newGameRoom);
         return newGameRoom;
     }
 

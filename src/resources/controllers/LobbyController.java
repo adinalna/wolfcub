@@ -78,13 +78,15 @@ public class LobbyController {
 
     @FXML
     private void toGameRoomButtonHandler(ActionEvent event) {
+        System.out.println(1);
         switchToGameRoom(GameManager.createGameRoom("TEST", players));
     }
 
     private void switchToGameRoom(GameRoom gameRoom) {
         try {
+            System.out.println(2);
             Stage stage = (Stage) playerListView.getScene().getWindow();
-
+            System.out.println(3);
             FXMLLoader loader = FXMLFetcher.loadGameRoomFxml();
             Parent root = loader.load();
 
@@ -92,17 +94,16 @@ public class LobbyController {
             stage.setScene(scene);
             stage.setTitle("Game Room");
             System.out.println(gameRoom);
-            GameRoomController gameRoomController = new GameRoomController();
-            gameRoomController.setGameRoom(gameRoom);
 
             Player currentPlayer = players.get(0); // Assuming the current player is at index 0
+            stage.setTitle("Game Room");
             currentPlayer.setInGame("");
-
             stage.show();
-            GameManager.startGameRoom(gameRoom);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+        GameManager.startGameRoom(gameRoom);
     }
 
     public void setLobby(Lobby selectedLobby) {

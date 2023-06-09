@@ -26,8 +26,8 @@ public class GameRoom implements Runnable{
         this.name = name;
         this.players = players;
         this.gameRoomController = gameRoomController;
-        gamePlaymaker = new GamePlaymaker(players);
         this.gameRoomController.setGameRoom(this);
+        gamePlaymaker = new GamePlaymaker(players);
     }
 
     public String getRoomID() {
@@ -42,6 +42,10 @@ public class GameRoom implements Runnable{
         return currentPlayer;
     }
 
+    public GameRoomController getGameRoomController() {
+        return gameRoomController;
+    }
+
     public Role getCurrentRoleReveal() {
         Role role = currentPlayer.getRole();
         System.out.println("Your Role is: "+ role.getRoleName());
@@ -50,6 +54,8 @@ public class GameRoom implements Runnable{
     }
 
     public void preGame() {
+//        gameRoomController.startGameTimer();
+        currentPlayer = players.get(0);
         gameRoomController.preGameController();
         System.out.println("Day " + gamePlaymaker.getCurrentRound());
     }
@@ -60,6 +66,7 @@ public class GameRoom implements Runnable{
 
     public void nightPhase() {
         Role playerRole = currentPlayer.getRole();
+        System.out.println("ROLE"+playerRole);
         System.out.println(TextRepository.getNightPhaseText(playerRole.getRoleName()));
         playerRole.specialAbility(gamePlaymaker.getAlivePlayers().get(1));
     }

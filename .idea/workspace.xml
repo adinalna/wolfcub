@@ -5,41 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="077f813d-62c4-410c-9d57-ae89416be683" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/TextRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Doctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Doctor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/GameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/GameManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/GamePlaymaker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/GamePlaymaker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/GameRoom.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/GameRoom.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Lobby.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Lobby.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Seer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Seer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Villager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Villager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/WarewolfCulb.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Werewolf.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Werewolf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/GameMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/GameMenuController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/GameRoomController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/GameRoomController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/LobbyController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/LobbyController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/LobbyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/LobbyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/LobbyListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/LobbyListController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/wolfcub.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Doctor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/views/game-room.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/views/game-room.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/GamePlaymaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GamePlaymaker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/GameRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Lobby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Lobby.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Seer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Seer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Villager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Villager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/WarewolfCulb.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Werewolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Werewolf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/tempMain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/controllers/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/controllers/GameMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/controllers/GameRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/controllers/GameRoomController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/controllers/LobbyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/controllers/LobbyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/controllers/LobbyListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/controllers/LobbyListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/game-room.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/game-room.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
