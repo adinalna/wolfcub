@@ -1,11 +1,11 @@
-package main;
+package wolfcub.main;
 
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.database.*;
-import main.Room;
-import main.Player;
+import wolfcub.main.Room;
+import wolfcub.main.Player;
 
 import java.io.FileInputStream;
 import java.io.IOException;
