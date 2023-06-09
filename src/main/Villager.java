@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package wolfcub.main;
 
 import java.util.ArrayList;
@@ -11,20 +7,18 @@ import java.util.Random;
 public class Villager extends Role{
     private String villagerType;
 
-    public Villager(String villagerType) {
+    public Villager() {
         super("Villager");
-        this.villagerType = villagerType;
     }
     
     public String getVillagerType() {
         return this.villagerType;
     }
-    
-    @Override
-    public void performAbility(Player player) {
-        // Villagers do not perform any special actions
+
+    public void setVillagerType(String villagerType) {
+        this.villagerType = villagerType;
     }
-    
+
     public static List<Villager> createVillagers() {
         
         // Create a list of available type of villagers to be assign at random
@@ -48,10 +42,16 @@ public class Villager extends Role{
             int index = random.nextInt(villagerTypes.size());
             // Remove the chosen index from the list
             String type = villagerTypes.remove(index);
-            Villager villager = new Villager(type);
+            Villager villager = new Villager();
+            villager.setVillagerType(type);
             villagers.add(villager);
         }
         
         return villagers;
+    }
+
+    @Override
+    public void specialAbility(Player player) {
+        //Villager does nothing
     }
 }

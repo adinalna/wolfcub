@@ -6,21 +6,16 @@ import java.util.Optional;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import wolfcub.main.GameRoom;
-import wolfcub.main.Player;
-import wolfcub.main.Role;
+import wolfcub.main.*;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextArea;
 
 public class GameRoomController {
-
     private Player currentPlayer;
     private GameRoom gameRoom;
     private List<Player> players;
@@ -30,6 +25,9 @@ public class GameRoomController {
 
     private int wolf = 2; //TEMP
     private int villager = 3; //TEMP
+
+    @FXML
+    private VBox chatRoom;
 
     @FXML
     private Label timerLabel;
@@ -45,15 +43,45 @@ public class GameRoomController {
 
     @FXML
     private Button sendButton;
+
+    @FXML
+    private TabPane chatTabPane;
+
+    @FXML
+    private TextArea chatArea1;
+
+    @FXML
+    private TextField messageField1;
+
+    @FXML
+    private TextArea chatArea2;
+
+    @FXML
+    private TextField messageField2;
     private int timeRemaining;
 
     @FXML
-    public void initialize(Stage stage, GameRoom gameRoom) {
-        this.gameRoom = gameRoom;
-        this.players = gameRoom.getPlayers();
-        // Pre-game (Wait for players)
-        narrator.appendText("\nGame will Start in 10..");
-        startTimer();
+    public void initialize() {
+        this.narrator.setText("\nGame will Start in 10..");
+    }
+
+    @FXML
+    private void toggleChatSection() {
+        chatTabPane.setVisible(!chatTabPane.isVisible());
+    }
+
+    @FXML
+    private void sendMessage1() {
+        String message = messageField1.getText();
+        chatArea1.appendText("You: " + message + "\n");
+        messageField1.clear();
+    }
+
+    @FXML
+    private void sendMessage2() {
+        String message = messageField2.getText();
+        chatArea2.appendText("You: " + message + "\n");
+        messageField2.clear();
     }
 
     @FXML
@@ -63,6 +91,12 @@ public class GameRoomController {
         messageField.clear();
     }
 
+    public void setGameRoom(GameRoom gameRoom) {
+        this.gameRoom = gameRoom;
+        this.players = gameRoom.getPlayers();
+        currentPlayer = this.gameRoom.getCurrentPlayer();
+    }
+
     public void setCurrentPlayer(Player player) {
         this.currentPlayer = player;
     }
@@ -70,31 +104,24 @@ public class GameRoomController {
     public void setStage(Stage stage) {
     }
 
-    private void preGameController() {
-        narrator.appendText("\nNarrator: \nGame is ready\n");
-        gameRoom.preGame();
-        currentPlayer = players.get(0);
-
-        // Delay the display of the alert using Platform.runLater()
+    public void preGameController() {
         Platform.runLater(() -> {
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Game Information");
             alert.setHeaderText("All players are ready.");
             alert.setContentText("The game will start now!");
-            gameRoom.preGame();
             alert.showAndWait().ifPresent(buttonType -> {
                 if (buttonType == ButtonType.OK) {
-                    // OK button was pressed, call your method here
+                    gameRoom.assignPlayerRoles();
                     roleReveal(currentPlayer);
                 }
             });
         });
-
     }
 
     private void roleReveal(Player player) {
         Role role = player.getRole();
-        String description = "You're a Werewolf\nKill all the villagers!";
+        String description = TextRepository.getPreGameText(role.getRoleName());
 
         // Delay the display of the alert using Platform.runLater()
         Platform.runLater(() -> {
@@ -111,31 +138,6 @@ public class GameRoomController {
         });
     }
 
-    private void startTimer() {
-
-        timeRemaining = 10;
-        timerLabel.setText(formatTime(timeRemaining));
-
-        Timeline timeline = new Timeline(
-                new KeyFrame(Duration.seconds(1), event -> {
-                    timeRemaining--;
-                    timerLabel.setText(formatTime(timeRemaining));
-
-                    if (timeRemaining <= 0) {
-                        timerLabel.setText("00:00");
-                        endRound();
-                    }
-                })
-        );
-        timeline.setCycleCount(10);
-        timeline.play();
-    }
-
-    private void endRound() {
-        narrator.setText("");
-        preGameController();
-    }
-
     private String formatTime(int seconds) {
         int minutes = seconds / 60;
         int remainingSeconds = seconds % 60;
@@ -143,23 +145,18 @@ public class GameRoomController {
     }
 
     private void nextRound() {
-
         int dayCount = 1;
-        while(villager > wolf){
+        while (villager > wolf) {
             roundTimer();
             narrator.setText("");
-            //Announce who has been killed
-
+            // Announce who has been killed
             narrator.appendText("\nNarrator: \nA player has been killed!\n");
-
             villager--;
             dayCount++;
         }
-
     }
 
     private void roundTimer() {
-
         timeRemaining = 30;
         timerLabel.setText(formatTime(timeRemaining));
 
@@ -204,13 +201,13 @@ public class GameRoomController {
         result.ifPresent(buttonType -> {
             if (buttonType == player1Button) {
                 // Player 1 was selected
-                narrator.appendText("You have to choosen Player 1 to be killed!");
+                narrator.appendText("You have chosen Player 1 to be killed!");
             } else if (buttonType == player2Button) {
                 // Player 2 was selected
-                narrator.appendText("You have to choosen Player 2 to be killed!");
+                narrator.appendText("You have chosen Player 2 to be killed!");
             } else if (buttonType == player3Button) {
                 // Player 3 was selected
-                narrator.appendText("You have to choosen Player 1 to be killed!");
+                narrator.appendText("You have chosen Player 3 to be killed!");
             }
         });
 
