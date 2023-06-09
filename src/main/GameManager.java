@@ -40,7 +40,7 @@ public class GameManager extends Application {
         gameMenuController.setGameManager(this);
     }
 
-    public ObservableList<Lobby> getAvailableLobbies() {
+    public static ObservableList<Lobby> getAvailableLobbies() {
         List<Lobby> availableLobbies = new ArrayList<>();
         //TEMP
         Lobby test1 = new Lobby("TEST1");

@@ -7,15 +7,41 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.HBox?>
 
-<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wolfcub.resources.controllers.LobbyListController" spacing="10" alignment="CENTER">
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
+<VBox prefHeight="650.0" prefWidth="847.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="wolfcub.resources.controllers.LobbyListController" spacing="10" alignment="CENTER" style="-fx-background-image: url('file:/C:/Users/fahmi/Desktop/Folders/SEM%201/WIF3003%20Concurrent%20Programming/Project/wolfcub/src/resources/images/menu_background.jpg'); -fx-background-size: cover;">
     <padding>
         <Insets top="50" right="50" bottom="50" left="50"/>
     </padding>
-
+    <BorderPane layoutX="108.0" layoutY="66.0" opacity="0.91" prefHeight="95.0" prefWidth="630.0">
+        <opaqueInsets>
+            <Insets bottom="2.0" />
+        </opaqueInsets>
+        <center>
+            <Label text="Lobby List" BorderPane.alignment="CENTER">
+                <font>
+                    <Font name="Arial Black" size="60"/>
+                </font>
+                <style>
+                    -fx-text-fill: white;
+                    -fx-effect: dropshadow(gaussian, black, 2, 2, 0, 0);
+                    -fx-stroke: black;
+                    -fx-stroke-width: 1.5;
+                </style>
+            </Label>
+        </center>
+    </BorderPane>
     <ListView fx:id="lobbyListView" prefHeight="200" prefWidth="300" />
 
     <HBox spacing="10">
         <TextField fx:id="gameCodeField" promptText="Enter Game Code" />
         <Button text="Join" onAction="#joinButtonClicked" />
     </HBox>
+
+    <Button layoutX="323.0" layoutY="276.0" onAction="#backMenuClicked" prefHeight="43.0" prefWidth="199.0" styleClass="menu-button" text="Menu">
+        <font>
+            <Font size="14.0" />
+        </font>
+    </Button>
 </VBox>

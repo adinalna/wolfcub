@@ -33,6 +33,9 @@ public class LobbyListController {
 
     private GameManager gameManager;
 
+    @FXML
+    private Button backMenuButton;
+
     public void initialize() {
         lobbyListView.setCellFactory(param -> new LobbyListCell());
         lobbyListView.setOnMouseClicked(this::handleListViewClick);
@@ -76,6 +79,24 @@ public class LobbyListController {
         String gameCode = gameCodeField.getText();
         // Handle joining the game lobby using the entered game code
         // Add your code here
+    }
+
+
+    @FXML
+    private void backMenuClicked(ActionEvent event) {
+        try {
+            // Load the rules.fxml file
+            FXMLLoader loader = FXMLFetcher.loadGameMenuFxml();
+            Parent root = loader.load();
+
+            // Get the current stage
+            Stage stage = (Stage) lobbyListView.getScene().getWindow();
+
+            // Set the root as the content of the current stage
+            stage.getScene().setRoot(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private class LobbyListCell extends ListCell<Lobby> {

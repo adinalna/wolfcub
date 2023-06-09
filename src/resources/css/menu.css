@@ -1,0 +1,12 @@
+.menu-button {
+    -fx-background-color: rgb(145, 220, 235);
+    -fx-text-fill: black;
+}
+
+.menu-button:pressed {
+    -fx-background-color: rgb(90, 160, 175); /* Darker shade for button press */
+}
+
+.menu-button:hover {
+    -fx-background-color: rgb(160, 235, 255);
+}
