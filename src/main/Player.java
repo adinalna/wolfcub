@@ -31,42 +31,6 @@ public class Player {
         this.role = role;
     }
 
-    // Assign role to players randomly
-//    public void assignRole(List<Role> roles) {
-//
-//        Random random = new Random();
-//        int index = random.nextInt(roles.size());
-//        
-//        // Set the role to the player 
-//        this.role = roles.get(index);
-//        
-//        // Need to remove roles from list 
-//        roles.remove(index); 
-//    }
-//    
-//    public void assignRole() {
-//
-//        // Create a list of available type of villagers to be assign at random
-//        List<Role> roles = new ArrayList<>();
-//        roles.add(new Werewolf());
-//        roles.add(new Werewolf());
-//        roles.add(new Seer());
-//        roles.add(new Doctor());
-//        roles.add(Villager.createVillagers().get(0));
-//        roles.add(Villager.createVillagers().get(1));
-//        roles.add(Villager.createVillagers().get(2));
-//        
-//        Random random = new Random();
-//        int index = random.nextInt(roles.size());
-//        
-//        // Set the role to the player 
-//        this.role = roles.get(index);
-//        
-//    }
-
-    // Allow players to vote for a specific player to eliminate
-
-
     public void setInGame(boolean inGame) {
         this.inGame = inGame;
     }
