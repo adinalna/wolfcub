@@ -61,7 +61,7 @@ public class GameManager extends Application {
             controller.setCurrentStage(currentStage);
 
             primaryStage.setScene(new Scene(root));
-            primaryStage.setTitle("Name Input");
+            primaryStage.setTitle("Username");
             primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();
