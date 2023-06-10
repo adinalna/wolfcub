@@ -5,54 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="077f813d-62c4-410c-9d57-ae89416be683" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Chat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/ChatType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Doctor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/FXMLFetcher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/GameManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/GamePlaymaker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/GameRoom.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Lobby.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Room.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Seer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/TextRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Timer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Villager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Werewolf.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/GameMenuController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/GameRoomController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/GameRulesController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/LobbyController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/LobbyController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/LobbyListController$LobbyListCell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/LobbyListController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/css/menu.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/images/menu_background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/views/chat.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/views/game-menu.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/views/game-room.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/views/game-rules.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/views/lobby-list.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/views/lobby.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/FXMLFetcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/FXMLFetcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Lobby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Lobby.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/controllers/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/controllers/GameMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/controllers/GameRulesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/controllers/GameRulesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/controllers/LobbyListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/controllers/LobbyListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/views/game-room.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/game-room.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/views/game-rules.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/game-rules.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/views/lobby-list.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/lobby-list.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wolfcub.iml" beforeDir="false" afterPath="$PROJECT_DIR$/wolfcub.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
