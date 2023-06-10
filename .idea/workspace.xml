@@ -5,23 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="077f813d-62c4-410c-9d57-ae89416be683" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Doctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Doctor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/GameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/GameManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/GameRoom.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/GameRoom.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Seer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Seer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/TextRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/TextRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Werewolf.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/Werewolf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/GameMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/GameMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/GameRoomController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/GameRoomController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Doctor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/GameRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Seer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Seer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/TextRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TextRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Werewolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Werewolf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/controllers/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/controllers/GameMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/controllers/GameRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/controllers/GameRoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wolfcub.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +101,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/Amirah" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
