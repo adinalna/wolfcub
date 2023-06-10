@@ -23,7 +23,7 @@ public class GameMenuController {     // implements Initializable
     private Lobby lobby; // Reference to the Lobby class
     private Player player;
     private String sessionId; // Session ID for the current player
-    private GameManager gameManager;
+
 
     @FXML
     private TextField roomCodeField;
@@ -41,6 +41,7 @@ public class GameMenuController {     // implements Initializable
 
     @FXML
     private Button rulesButton;
+    private GameManager gameManager;
 
     public void initialize() {
         String paragraph = """
@@ -75,7 +76,7 @@ public class GameMenuController {     // implements Initializable
             Parent root = loader.load();
 
             LobbyListController lobbyListController = loader.getController();
-            lobbyListController.setLobbyList((ObservableList<Lobby>) gameManager.getAvailableLobbies());
+            lobbyListController.setLobbyList((ObservableList<Lobby>) GameManager.getAvailableLobbies());
 
             Stage stage = (Stage) joinGameButton.getScene().getWindow();
             Scene scene = new Scene(root);
@@ -91,7 +92,7 @@ public class GameMenuController {     // implements Initializable
     private void createGameButtonClicked(ActionEvent event) {
         // Handle create game button click
         System.out.println("Create Game button clicked");
-        // Add your code here
+//        GameManager.createLobby(name)
     }
 
     @FXML
@@ -132,84 +133,4 @@ public class GameMenuController {     // implements Initializable
         return "SESSION_" + userId;
     }
 }
-//
-//    @FXML
-//    private void joinRoomButtonClicked(ActionEvent event) {
-//        switchToLobby();
-//    }
-//
-//
-//    private void showJoinRoomErrorAlert(String errorMessage) {
-//        Alert alert = new Alert(Alert.AlertType.ERROR);
-//        alert.setTitle("Join Room Error");
-//        alert.setHeaderText(null);
-//        alert.setContentText(errorMessage);
-//        alert.showAndWait();
-//    }
-//
-//    @FXML
-//    private void createRoomButtonClicked(ActionEvent event) {
-//        //can get the user id from the database
-//        String userId = player.getPlayerID();
-//        String roomCode = lobby.createRoom(userId);
-//        if (roomCode != null) {
-//            System.out.println("Created private room. User ID: " + userId + ", Room Code: " + roomCode);
-//            showRoomCodeAlert(roomCode);
-//        } else {
-//            System.out.println("Failed to create private room. Maximum number of private rooms reached.");
-//        }
-//    }
-//
-//    @FXML
-//    private void joinWithCodeButtonClicked(ActionEvent event) {
-//        String roomCode = roomCodeField.getText();
-//        int userId = lobby.getUserId();
-//        // TODO: Implement logic to join private room with code
-//        if (!roomCode.isEmpty()) {
-//            System.out.println("Joined private room with code: " + roomCode + ". User ID: " + userId);
-//        } else {
-//            System.out.println("Please enter a valid room code.");
-//        }
-//    }
-//
-//    private String generateSessionId(int userId) {
-//        // Generate session ID based on user ID or any other logic you prefer
-//        return "SESSION_" + userId;
-//    }
-//
-//    private void showRoomCodeAlert(String roomCode) {
-//        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//        alert.setTitle("Room Code");
-//        alert.setHeaderText("Your room code is:");
-//        alert.setContentText(roomCode);
-//
-//        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-//        stage.setAlwaysOnTop(true); // Ensure the alert dialog is always on top
-//
-//        alert.showAndWait();
-//    }
-//    /**
-//     * Initializes the controller class.
-//     */
-////    @Override
-////    public void initialize(URL url, ResourceBundle rb) {
-////        // TODO
-////    }
-//
-//    private void switchToLobby() {
-//        try {
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("lobby.fxml"));
-//            Parent root = loader.load();
-//            LobbyController lobbyController = loader.getController();
-//
-//            Stage stage = (Stage) joinRoomButton.getScene().getWindow();
-//            stage.setScene(new Scene(root));
-//            stage.setTitle("Lobby");
-//            stage.show();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            showJoinRoomErrorAlert("Failed to load lobby.fxml");
-//        }
-//    }
-
 

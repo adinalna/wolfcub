@@ -1,6 +1,8 @@
 package wolfcub.resources.controllers;
 
 import javafx.application.Platform;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import javafx.animation.KeyFrame;
@@ -106,13 +108,16 @@ public class GameRoomController {
 
     public void preGameController() {
         Platform.runLater(() -> {
-            Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setTitle("Game Information");
-            alert.setHeaderText("All players are ready.");
-            alert.setContentText("The game will start now!");
-            alert.showAndWait().ifPresent(buttonType -> {
-                if (buttonType == ButtonType.OK) {
-                    gameRoom.assignPlayerRoles();
+            Dialog<ButtonType> dialog = new Dialog<>();
+            dialog.setTitle("Game Information");
+            dialog.setHeaderText("All players are ready.");
+            dialog.setContentText("The game will start now!");
+
+            ButtonType startGameButton = new ButtonType("Start Game", ButtonBar.ButtonData.OK_DONE);
+            dialog.getDialogPane().getButtonTypes().add(startGameButton);
+
+            dialog.showAndWait().ifPresent(buttonType -> {
+                if (buttonType == startGameButton) {
                     roleReveal(currentPlayer);
                 }
             });
@@ -123,16 +128,18 @@ public class GameRoomController {
         Role role = player.getRole();
         String description = TextRepository.getPreGameText(role.getRoleName());
 
-        // Delay the display of the alert using Platform.runLater()
         Platform.runLater(() -> {
-            Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setTitle("Role Information");
-            alert.setHeaderText(role.getRoleName());
-            alert.setContentText(description);
-            alert.showAndWait().ifPresent(buttonType -> {
-                if (buttonType == ButtonType.OK) {
-                    // OK button was pressed, call your method here
-                    nightPhaseController();
+            Dialog<ButtonType> dialog = new Dialog<>();
+            dialog.setTitle("Role Information");
+            dialog.setHeaderText(role.getRoleName());
+            dialog.setContentText(description);
+
+            ButtonType okButton = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
+            dialog.getDialogPane().getButtonTypes().add(okButton);
+
+            dialog.showAndWait().ifPresent(buttonType -> {
+                if (buttonType == okButton) {
+                    gameRoom.nightPhase();
                 }
             });
         });
@@ -175,42 +182,69 @@ public class GameRoomController {
         timeline.play();
     }
 
-    private void nightPhaseController() {
-        String action = "Kill";
-        String actionDesc = "Choose who you want to kill!";
+    public void nightPhaseController(List<Player> alivePlayers) {
+        Role playerRole = currentPlayer.getRole();
+        String action = "Role Action";
+        String actionDesc = TextRepository.getNightPhaseText(playerRole.getRoleName());
+        List<Player> targetPlayers = new ArrayList<>();
 
-        // Create buttons for each player
-        ButtonType player1Button = new ButtonType("Player 1");
-        ButtonType player2Button = new ButtonType("Player 2");
-        ButtonType player3Button = new ButtonType("Player 3");
+        Platform.runLater(() -> {
+            Dialog<ButtonType> dialog = new Dialog<>();
+            dialog.setTitle(action);
+            dialog.setHeaderText("It's night time!");
+            dialog.setContentText(actionDesc);
 
-        // Create the alert with buttons
-        Alert alert = new Alert(AlertType.CONFIRMATION);
-        alert.setTitle(action);
-        alert.setHeaderText("It's night time!");
-        alert.setContentText(actionDesc);
+            if((playerRole.getRoleName().equals("Villager"))){
+                ButtonType startGameButton = new ButtonType("Next", ButtonBar.ButtonData.OK_DONE);
+                dialog.getDialogPane().getButtonTypes().add(startGameButton);
 
-        // Set the buttons
-        alert.getButtonTypes().setAll(player1Button, player2Button, player3Button);
+                Optional<ButtonType> result = dialog.showAndWait();
+                if (result.isPresent() && result.get() == startGameButton) {
+                    Platform.runLater(() -> {
+                    });
+                }
 
-        // Show the alert and wait for button selection
-        Optional<ButtonType> result = alert.showAndWait();
-        narrator.setText("");
-        narrator.appendText("\nSummary of night time\n");
-        // Check which button was selected
-        result.ifPresent(buttonType -> {
-            if (buttonType == player1Button) {
-                // Player 1 was selected
-                narrator.appendText("You have chosen Player 1 to be killed!");
-            } else if (buttonType == player2Button) {
-                // Player 2 was selected
-                narrator.appendText("You have chosen Player 2 to be killed!");
-            } else if (buttonType == player3Button) {
-                // Player 3 was selected
-                narrator.appendText("You have chosen Player 3 to be killed!");
+            } else if((playerRole.getRoleName().equals("Werewolf"))){
+                for (Player p : alivePlayers) {
+                    if (!p.equals(currentPlayer) || p.getRole().getRoleName().equals("Werewolf")) {
+                        ButtonType playerButton = new ButtonType(p.getName());
+                        dialog.getDialogPane().getButtonTypes().add(playerButton);
+                        targetPlayers.add(p);
+                    }
+                }
+
+                dialog.showAndWait().ifPresent(buttonType -> {
+                    for (int i = 0; i < targetPlayers.size(); i++) {
+                        if (buttonType.getText().equals(targetPlayers.get(i).getName())) {
+                            Player selectedPlayer = targetPlayers.get(i);
+                            narrator.appendText("You have chosen " + selectedPlayer.getName() + " to be killed!");
+                            break;
+                        }
+                    }
+                });
+            }else{
+                for (Player p : alivePlayers) {
+                    if (!p.equals(currentPlayer)) {
+                        ButtonType playerButton = new ButtonType(p.getName());
+                        dialog.getDialogPane().getButtonTypes().add(playerButton);
+                        targetPlayers.add(p);
+                    }
+                }
+
+                dialog.showAndWait().ifPresent(buttonType -> {
+                    for (int i = 0; i < targetPlayers.size(); i++) {
+                        if (buttonType.getText().equals(targetPlayers.get(i).getName())) {
+                            Player selectedPlayer = targetPlayers.get(i);
+                            narrator.appendText("You have chosen " + selectedPlayer.getName() + " to be protected/role reveal");
+                            break;
+                        }
+                    }
+                });
             }
         });
+    }
 
-        roundTimer();
+    public void dayPhaseController(List<Player> alivePlayers) {
+
     }
 }

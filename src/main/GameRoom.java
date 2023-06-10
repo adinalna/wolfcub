@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import wolfcub.resources.controllers.GameRoomController;
 
 import java.util.*;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -19,6 +20,9 @@ public class GameRoom implements Runnable{
     private Map<Player,Integer> votes = new HashMap<>();
     private Timer discussionTimer;
     private int day = 0;
+    private CountDownLatch preGameLatch;
+    private CountDownLatch nightPhaseLatch;
+    private CountDownLatch dayPhaseLatch;
 
     public GameRoom(String name,List<Player> players, GameRoomController gameRoomController) {
         currentPlayer = players.get(0);
@@ -30,6 +34,10 @@ public class GameRoom implements Runnable{
         gamePlaymaker = new GamePlaymaker(players);
     }
 
+    public Player getCurrentPlayer(){
+        return players.get(0);
+    }
+
     public String getRoomID() {
         return roomID;
     }
@@ -38,71 +46,62 @@ public class GameRoom implements Runnable{
         return players;
     }
 
-    public Player getCurrentPlayer() {
-        return currentPlayer;
-    }
-
-    public GameRoomController getGameRoomController() {
-        return gameRoomController;
-    }
-
-    public Role getCurrentRoleReveal() {
-        Role role = currentPlayer.getRole();
-        System.out.println("Your Role is: "+ role.getRoleName());
-        System.out.println(TextRepository.getPreGameText(role.getRoleName()));
-        return role;
-    }
-
     public void preGame() {
-//        gameRoomController.startGameTimer();
         currentPlayer = players.get(0);
+        gamePlaymaker.assignPlayerRoles();
         gameRoomController.preGameController();
         System.out.println("Day " + gamePlaymaker.getCurrentRound());
-    }
 
-    public void assignPlayerRoles(){
-        gamePlaymaker.assignPlayerRoles();
+        preGameLatch.countDown();
     }
 
     public void nightPhase() {
-        Role playerRole = currentPlayer.getRole();
-        System.out.println("ROLE"+playerRole);
-        System.out.println(TextRepository.getNightPhaseText(playerRole.getRoleName()));
-        playerRole.specialAbility(gamePlaymaker.getAlivePlayers().get(1));
+        try {
+            preGameLatch.await();
+            System.out.println("Night phase begins...");
+            gameRoomController.nightPhaseController(gamePlaymaker.getAlivePlayers());
+            nightPhaseLatch.countDown();
+        } catch (InterruptedException e) {
+        }
     }
 
 
     public void dayPhase() {
-        gamePlaymaker.nextRound();
-        System.out.println("Day " + gamePlaymaker.getCurrentRound());
-        System.out.println("Day phase begins...");
+        try {
+            nightPhaseLatch.await();
+            gamePlaymaker.nextRound();
+            System.out.println("Day " + gamePlaymaker.getCurrentRound());
+            System.out.println("Day phase begins...");
 
-        // Start the discussion timer for 30 seconds
-        discussionTimer = new Timer(30);
-        discussionTimer.start();
-        System.out.println("Start Discussion!");
-        // Wait for the discussion timer to complete
-        while (!discussionTimer.isExpired()) {
-            long remainingTime = discussionTimer.getRemainingTime() / 1000; // Convert remaining time to seconds
-            long countdownValue = remainingTime + 1;
+            // Start the discussion timer for 30 seconds
+            discussionTimer = new Timer(30);
+            discussionTimer.start();
+            System.out.println("Start Discussion!");
+            // Wait for the discussion timer to complete
+            while (!discussionTimer.isExpired()) {
+                long remainingTime = discussionTimer.getRemainingTime() / 1000; // Convert remaining time to seconds
+                long countdownValue = remainingTime + 1;
 
-            System.out.println(countdownValue);
+                System.out.println(countdownValue);
 
-            try {
-                Thread.sleep(1000); // Sleep for 1 second
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+                try {
+                    Thread.sleep(1000); // Sleep for 1 second
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
-        }
-        System.out.println("Discussion time is over!");
-        //voting phase
-        while (gamePlaymaker.allPlayersVoted(gamePlaymaker.getCurrentRound())) {//
-            try {
-                currentPlayer.castVote(gamePlaymaker.getCurrentRound(), gamePlaymaker.getAlivePlayers().get(0));
-                Thread.sleep(1000); // Sleep for 1 second before checking the condition again
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            System.out.println("Discussion time is over!");
+            //voting phase
+            while (gamePlaymaker.allPlayersVoted(gamePlaymaker.getCurrentRound())) {//
+                try {
+                    currentPlayer.castVote(gamePlaymaker.getCurrentRound(), gamePlaymaker.getAlivePlayers().get(0));
+                    Thread.sleep(1000); // Sleep for 1 second before checking the condition again
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
+            dayPhaseLatch.countDown();
+        } catch (InterruptedException e) {
         }
     }
 
@@ -119,29 +118,21 @@ public class GameRoom implements Runnable{
 
     public void runGameRoom() {
         ExecutorService executor = Executors.newFixedThreadPool(1);
+        preGameLatch = new CountDownLatch(1);
+        nightPhaseLatch = new CountDownLatch(1);
+        dayPhaseLatch = new CountDownLatch(1);
 
-        // Start the game loop in a separate thread
         executor.execute(() -> {
             preGame();
 
             while (true) {
-                // Night phase
-                Platform.runLater(() -> {
-                    // Update UI components in the FXML file using the controller
-                    //gameRoomController.setPhaseLabel("Night Phase");
-                });
-                nightPhase();
+                dayPhase();
 
                 if (!roundEnd()) {
                     break;
                 }
 
-                // Day phase
-                Platform.runLater(() -> {
-                    // Update UI components in the FXML file using the controller
-                    //gameRoomController.setPhaseLabel("Day Phase");
-                });
-                dayPhase();
+                nightPhase();
 
                 if (!roundEnd()) {
                     break;

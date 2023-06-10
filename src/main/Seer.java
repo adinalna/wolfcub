@@ -1,16 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package wolfcub.main;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Seer extends Role{
+    private List<Player> revealedRoles;
     public Seer() {
         super("Seer");
+        revealedRoles = new ArrayList<>();
     }
 
     @Override
     public void specialAbility(Player player) {
-
+        revealedRoles.add(player);
     }
 }

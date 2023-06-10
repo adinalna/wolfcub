@@ -1,5 +1,6 @@
 package wolfcub.main;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Werewolf extends Role{
@@ -7,9 +8,10 @@ public class Werewolf extends Role{
 
     public Werewolf() {
         super("Werewolf");
+        playersToKill = new ArrayList<>();
     }
 
-    public Player getPlayerToKill(int round){
+    public Player getPlayersKilled(int round){
         return playersToKill.get(round);
     }
 
