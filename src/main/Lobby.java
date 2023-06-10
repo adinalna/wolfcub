@@ -18,6 +18,10 @@ public class Lobby {
         return name;
     }
 
+    public List<Player> getPlayers() {
+        return players;
+    }
+
     public void setGameManager(GameManager gameManager) {
         this.gameManager = gameManager;
     }

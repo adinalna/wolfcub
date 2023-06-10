@@ -1,5 +1,8 @@
 package wolfcub.resources.controllers;
 
+import javafx.scene.control.*;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,6 +20,17 @@ import wolfcub.main.Lobby;
 import wolfcub.main.Player;
 import wolfcub.main.GameManager ;
 import java.io.IOException;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.geometry.*;
+import javafx.scene.control.ListCell;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
+import wolfcub.main.Lobby;
+
 
 public class LobbyListController {
 
@@ -99,15 +113,46 @@ public class LobbyListController {
         }
     }
 
-    private class LobbyListCell extends ListCell<Lobby> {
+
+
+    public class LobbyListCell extends ListCell<Lobby> {
+        private Text lobbyText;
+
+        public LobbyListCell() {
+            lobbyText = new Text();
+            lobbyText.setTextAlignment(TextAlignment.CENTER);
+
+            StackPane container = new StackPane(lobbyText);
+            container.setPrefHeight(50);  // Set the preferred height for the cell
+            container.setMinHeight(40);   // Set the minimum height for the cell
+
+            Rectangle outline = new Rectangle();
+            outline.setStroke(Color.BLACK);  // Set the outline color
+            outline.setFill(Color.TRANSPARENT);  // Set the fill color to transparent
+            outline.setWidth(container.getPrefWidth());  // Match the outline width with the container width
+            outline.heightProperty().bind(container.heightProperty());  // Match the outline height with the container height
+
+            container.getChildren().add(outline);
+
+            setGraphic(container);
+        }
+
         @Override
         protected void updateItem(Lobby lobby, boolean empty) {
             super.updateItem(lobby, empty);
             if (empty || lobby == null) {
                 setText(null);
+                lobbyText.setText(null);
             } else {
-                setText(lobby.getName());
+                lobbyText.setText(lobby.getName() + "\n Players: 5/7");
+                //lobbyText.setText(lobby.getName() + "\n Players: " + lobby.getPlayers());
             }
         }
     }
+
+
+
+
+
+
 }

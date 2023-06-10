@@ -43,7 +43,7 @@ public class GameMenuController {     // implements Initializable
     private Button rulesButton;
 
     public void initialize() {
-        String paragraph = """
+        /*String paragraph = """
                 Steps:
                 1. Once 7 players have entered the game room, the room will be start.
                 2. Count down starts from 3 and then, the game begins.
@@ -57,7 +57,7 @@ public class GameMenuController {     // implements Initializable
                 i. Villager: Has no special ability.
                 ii. Seer: Can identify the role of one of the players (villagers or werewolves.)
                 iii. Doctor: Can protect one of the players at night from being eliminated.
-                iv. Werewolf: Is able to kill innocent villagers at night.""";
+                iv. Werewolf: Is able to kill innocent villagers at night."""; */
     }
 
     public void setUSERNAME(Text USERNAME) {

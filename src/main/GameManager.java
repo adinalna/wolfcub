@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 import wolfcub.resources.controllers.GameMenuController;
 import wolfcub.resources.controllers.GameRoomController;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
