@@ -9,10 +9,10 @@ public class TextRepository {
     private static final String ROLE_VILLAGER = "Villager";
     private static final String ROLE_SEER = "Seer";
     private static final String ROLE_DOCTOR = "Doctor";
-    private static Map<String, String> preGameTexts = new HashMap<>();
-    private static Map<String, String> dayPhaseTexts = new HashMap<>();
-    private static Map<String, String> nightPhaseTexts = new HashMap<>();
-    private static Map<String, String> winGameTexts = new HashMap<>();
+    private static final Map<String, String> preGameTexts = new HashMap<>();
+    private static final Map<String, String> dayPhaseTexts = new HashMap<>();
+    private static final Map<String, String> nightPhaseTexts = new HashMap<>();
+    private static final Map<String, String> winGameTexts = new HashMap<>();
 
     static {
         // Set the pre-game text for each role
@@ -56,7 +56,7 @@ public class TextRepository {
         return winGameTexts.get(roleType);
     }
 
-    public static String getVoteText() {
+    public static String getDayPhaseVoteText() {
         return "Select a player you think is the Werewolf! Cast Your Vote Now!";
     }
 }

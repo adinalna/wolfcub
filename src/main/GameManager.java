@@ -1,13 +1,11 @@
 package wolfcub.main;
 
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import wolfcub.resources.controllers.GameMenuController;
 import wolfcub.resources.controllers.GameRoomController;
@@ -70,7 +68,7 @@ public class GameManager extends Application {
         new Thread(newGameRoom).start();
     }
 
-    public void createLobby(String name) {
+    public static void createLobby(String name) {
         Lobby newlobby = new Lobby(name);
         lobbies.add(newlobby);
         //Add in database

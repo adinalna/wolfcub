@@ -4,67 +4,58 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="077f813d-62c4-410c-9d57-ae89416be683" name="Changes" comment="" />
+    <list default="true" id="b1555b7e-f6f8-4809-ab23-6ba542b8fcbb" name="Changes" comment="pull main">
+      <change afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/GameRoom.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/GameMenuController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/GameRoomController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Doctor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GameRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Seer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Seer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/TextRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TextRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Werewolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Werewolf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/controllers/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/controllers/GameMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/controllers/GameRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/controllers/GameRoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/Chat.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/Chat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/ChatType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/ChatType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/Doctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/Doctor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/FXMLFetcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/FXMLFetcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/Firebase$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/Firebase$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/Firebase$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/Firebase$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/Firebase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/Firebase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/GameManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/GameManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/GamePlaymaker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/GamePlaymaker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/GameRoom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/GameRoom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/Lobby.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/Lobby.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/Room.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/Seer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/Seer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/TextRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/TextRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/Timer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/Timer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/Villager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/Villager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/Werewolf.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/Werewolf.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/resources/controllers/GameRoomController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/resources/controllers/GameRoomController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/resources/controllers/GameRulesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/resources/controllers/GameRulesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/resources/controllers/LobbyController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/resources/controllers/LobbyController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/resources/controllers/LobbyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/resources/controllers/LobbyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/resources/controllers/LobbyListController$LobbyListCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/resources/controllers/LobbyListController$LobbyListCell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/resources/controllers/LobbyListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/resources/controllers/LobbyListController.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
-  <component name="ProjectId" id="2QmB6N8HxEJygn6v8OvRos0ELiO" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Program Files/Java/javafx-sdk-20.0.1/lib",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.updates",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="wolfcub.main" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\adina\OneDrive\Desktop\UM Assignments\Year 3 Sem 2\wolfcub\src\resources\views\views" />
-      <recent name="C:\Users\adina\OneDrive\Desktop\UM Assignments\Year 3 Sem 2\wolfcub\src\resources\views" />
-      <recent name="C:\Users\adina\OneDrive\Desktop\UM Assignments\Year 3 Sem 2\wolfcub\src\main" />
-      <recent name="C:\Users\adina\OneDrive\Desktop\UM Assignments\Year 3 Sem 2\wolfcub\src\views" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="wolfcub" />
-      <recent name="wolfcub.resources" />
-      <recent name="wolfcub.controllers" />
-    </key>
-  </component>
   <component name="RunManager">
-    <configuration name="Wolfcub" type="Application" factoryName="Application">
+    <configuration name="wolfcub" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="wolfcub.main.GameManager" />
       <module name="wolfcub" />
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-20.0.1\lib&quot; --add-modules javafx.fxml,javafx.controls,javafx.graphics" />
@@ -73,35 +64,7 @@
       </method>
     </configuration>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="077f813d-62c4-410c-9d57-ae89416be683" name="Changes" comment="" />
-      <created>1685948706007</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1685948706007</updated>
-      <workItem from="1685948707699" duration="9640000" />
-      <workItem from="1686030865615" duration="594000" />
-      <workItem from="1686038600075" duration="6051000" />
-      <workItem from="1686121010193" duration="17069000" />
-      <workItem from="1686207341621" duration="8594000" />
-      <workItem from="1686220029527" duration="1283000" />
-    </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
