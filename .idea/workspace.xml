@@ -4,9 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="077f813d-62c4-410c-9d57-ae89416be683" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+    <list default="true" id="077f813d-62c4-410c-9d57-ae89416be683" name="Changes" comment="pull main">
+      <change afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/main/GameRoom.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/GameMenuController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/wolfcub/wolfcub/resources/controllers/GameRoomController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Doctor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GameRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GameRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Seer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Seer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/TextRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TextRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Werewolf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Werewolf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/controllers/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/controllers/GameMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/controllers/GameRoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/controllers/GameRoomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/Doctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/Doctor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/Seer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/Seer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/TextRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/TextRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/wolfcub/main/Werewolf.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wolfcub/main/Werewolf.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +38,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp_1_GameManager.class" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp_2_GameManager.class" root0="SKIP_INSPECTION" />
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp__GameManager.class" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -31,25 +51,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Program Files/Java/javafx-sdk-20.0.1/lib",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.updates",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/Java/javafx-sdk-20.0.1/lib&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.updates&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="wolfcub.main" />
@@ -90,6 +110,8 @@
       <workItem from="1686121010193" duration="17069000" />
       <workItem from="1686207341621" duration="8594000" />
       <workItem from="1686220029527" duration="1283000" />
+      <workItem from="1686318435795" duration="13158000" />
+      <workItem from="1686372168845" duration="623000" />
     </task>
     <servers />
   </component>
@@ -101,10 +123,26 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/Amirah" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="pull main" />
+    <option name="LAST_COMMIT_MESSAGE" value="pull main" />
   </component>
 </project>

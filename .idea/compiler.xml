@@ -9,5 +9,8 @@
         <module name="wolfcub" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="wolfcub" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
